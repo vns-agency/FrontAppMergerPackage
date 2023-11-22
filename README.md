@@ -27,11 +27,22 @@ public function boot(): void
     {
         FrontAppMerger::registerGitRepo(
             repository: "git@github.com:vns-agency/YMP-website.git",
-            replaceIndexViewPath: resource_path('views/index.blade.php')
-        )->registerGitRepo(
-            repository: "git@github.com:vns-agency/yma-web-dashboard.git",
-            replaceIndexViewPath: resource_path('views/index2.blade.php')
-        );
+            //the blade file path that should be replaced with the newly generated index.html
+            replaceIndexViewPath: resource_path('views/index.blade.php'),// defult null
+
+            //optional parameters and its default values
+            processType: ProcessType::GIT, //or ProcessType::Local
+            //the front-end app framework
+            projectType: ProjectType::VUE, //currently only supported VUE
+            //package manager Yarn or NPM
+            packageManagerType: PackageManagerType::Yarn, //defult value
+            //disable copping Assets
+            copyAssets: true, 
+            //set the front-end app build folder 
+            distFolderName: 'dist',
+            //where should the assets move to 
+            copyDistFilesTo: public_path()
+        )
     }
 }
 ```
