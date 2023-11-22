@@ -17,7 +17,23 @@ composer require vns-agency/front-app-merger
 ## Usage
 
 ```php
-// Usage description here
+// in you AppServiceProvider
+use FrontAppMerger;
+
+
+public function boot(): void
+{
+    if ($this->app->runningInConsole())
+    {
+        FrontAppMerger::registerGitRepo(
+            repository: "git@github.com:vns-agency/YMP-website.git",
+            replaceIndexViewPath: resource_path('views/index.blade.php')
+        )->registerGitRepo(
+            repository: "git@github.com:vns-agency/yma-web-dashboard.git",
+            replaceIndexViewPath: resource_path('views/index2.blade.php')
+        );
+    }
+}
 ```
 
 ### Testing
