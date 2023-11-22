@@ -1,0 +1,52 @@
+{
+    "name": "vns-agency/front-app-merger",
+    "description": "Merge Front-end Apps with Laravel",
+    "keywords": [
+    ],
+    "homepage": "https://github.com/vns-agency/front-app-merger",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mahmoud Yas",
+            "email": "m.yas@vns.agency",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VnsAgency\\FrontAppMerger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Test\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VnsAgency\\FrontAppMerger\\FrontAppMergerServiceProvider"
+            ],
+            "aliases": {
+                "FrontAppMerger": "VnsAgency\\FrontAppMerger\\FrontAppMergerFacade"
+            }
+        }
+    },
+    "version": "0.0.1"
+}
