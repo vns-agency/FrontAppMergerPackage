@@ -47,6 +47,15 @@ public function boot(): void
 }
 ```
 
+This package will run automatically each time you install or update composer. However, you can run it manually using these Artisan commands
+```php
+//to insatll the fron-end apps 
+php artisan frontAppMerger
+//to clean up the fron-end apps 
+php artisan frontAppMerger:cleanUp
+```
+
+
 ### Testing
 
 ```bash
