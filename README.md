@@ -43,6 +43,12 @@ public function boot(): void
             //where should the assets move to 
             copyDistFilesTo: public_path()
         )
+        //you can chain as many apps as you want
+        ->registerLocalRepo(
+            repository: base_path('mayApp'),
+            //the blade file path that should be replaced with the newly generated index.html
+            replaceIndexViewPath: resource_path('views/index2.blade.php'),// default null
+        )
     }
 }
 ```
