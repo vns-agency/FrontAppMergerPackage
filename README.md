@@ -26,7 +26,7 @@ public function boot(): void
     if ($this->app->runningInConsole())
     {
         FrontAppMerger::registerGitRepo(
-            repository: "git@github.com:vns-agency/YMP-website.git",
+            repository: "git@github.com:vns-agency/test.git",
             //the blade file path that should be replaced with the newly generated index.html
             replaceIndexViewPath: resource_path('views/index.blade.php'),// default null
 
